@@ -6,14 +6,15 @@ import '../styles/ShopPage.css'
 
 function ShopPage({cart, setCart}) {
   const { products, error, loading } = useProducts();
-  
+  const cartItems = cart.reduce((sum, product) => sum + product.quantity, 0)
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>A network error was encountered</p>;
 
   return (
     <>
         <Link to='/cart'><button>Checkout</button></Link>
-        <p>Cart: {cart.length}</p>
+        <p>Cart: {cartItems}</p>
         <div className="products">
             {products.map((product)=>{
                 return <ProductCard product={product} cart={cart} setCart={setCart}/>
