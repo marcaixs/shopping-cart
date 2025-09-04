@@ -13,8 +13,11 @@ function ShopPage({cart, setCart}) {
 
   return (
     <div className="shop-container">
+      <div className="cart-button">
         <Link to='/cart'><button>Checkout</button></Link>
         <p>Cart: {cartItems}</p>
+      </div>
+        
         <div className="products">
             {products.map((product)=>{
                 return <ProductCard 
