@@ -24,11 +24,15 @@ function ProductCard({product, cart, setCart}){
         }
         
         if(index > -1){
-            cart[index].quantity = quantity
-            return
+            const updatedCart = cart.map(item =>
+            item.id === product.id ? { ...item, quantity } : item
+            );
+            setCart(updatedCart);
+           
         } else {
-            setCart([...cart, product])};
-            return
+            setCart([...cart, {...product, quantity}]);
+        };
+          
     }, [quantity])
         
     console.log(cart)
