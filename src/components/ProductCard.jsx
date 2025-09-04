@@ -40,6 +40,7 @@ function ProductCard({product, cart, setCart}){
         <div className="product-card">
             <p>{product.title}</p>
             <img src={product.image} alt={product.title} />
+            <p>Price: {product.price}</p>
             <div className="button-box">
                 <button onClick={()=>{
                     setQuantity(quantity - 1)
