@@ -17,8 +17,13 @@ function ShopPage({cart, setCart}) {
         <p>Cart: {cartItems}</p>
         <div className="products">
             {products.map((product)=>{
-                return <ProductCard product={product} cart={cart} setCart={setCart}/>
-            })}
+                return <ProductCard 
+                  key={product.id}
+                  product={product}
+                  cart={cart}
+                  setCart={setCart}/>
+              })
+            }
         </div> 
     </>
   )
