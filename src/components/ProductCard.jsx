@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 function ProductCard({product, cart, setCart}){
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(product.quantity);
 
     useEffect(() => {
         if(quantity < 0){
