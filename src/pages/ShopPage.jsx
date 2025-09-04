@@ -3,7 +3,7 @@ import ProductCard from "../components/ProductCard";
 import useProducts from "../components/useProducts";
 
 function ShopPage() {
-  const {products, error, loading} = useProducts;
+  const {products, error, loading} = useProducts();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>A network error was encountered</p>;
