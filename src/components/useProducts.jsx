@@ -13,11 +13,16 @@ function useProducts (){
         }  
         return response.json();
       })
-      .then(data => setProducts(data))
+      .then(data => {data.map((product)=>
+        {product.quantity = 0;
+          return product;
+        }) 
+        setProducts(data)})
+
       .catch(error =>setError(error))
       .finally(() => setLoading(false));
   }, []);
-
+  
   return {products, error, loading}
 }
 
