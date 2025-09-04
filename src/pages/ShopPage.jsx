@@ -12,7 +12,7 @@ function ShopPage({cart, setCart}) {
   if (error) return <p>A network error was encountered</p>;
 
   return (
-    <>
+    <div className="shop-container">
         <Link to='/cart'><button>Checkout</button></Link>
         <p>Cart: {cartItems}</p>
         <div className="products">
@@ -25,7 +25,7 @@ function ShopPage({cart, setCart}) {
               })
             }
         </div> 
-    </>
+    </div>
   )
 }
 
