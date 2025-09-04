@@ -18,3 +18,5 @@ function useProducts (){
 
   return {products, error, loading}
 }
+
+export default useProducts

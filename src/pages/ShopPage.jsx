@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import ProductCard from "../components/ProductCard";
+import useProducts from "../components/useProducts";
 
 function ShopPage() {
   const {products, error, loading} = useProducts;
